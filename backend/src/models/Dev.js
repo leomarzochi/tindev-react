@@ -13,7 +13,15 @@ const DevSchema = new Schema({
         type: String,
         required: true
     },
-    bio: String
+    bio: String,
+    likes: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Dev'
+    }],
+    dislikes: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Dev'
+    }]
 }, {
     timestamps: true
 })
